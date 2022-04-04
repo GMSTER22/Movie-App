@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+
+:root {
+    --dark-color : #1a1a1a;
+    --primary-color: #292929;
+    --secondary-color:  #5f5f5f;
+    --tertiairy-color: #cacaca;
+    --color-white: #fff; 
+    /* --primary-color: #22254b;
+    --secondary-color: #373b69; 
+    --tertiairy-color: #7378c5;*/
+}
+
+:root.active {
+    --dark-color: rgba(17, 18, 36, 0.5);
+    --primary-color: rgba(34, 37, 75, 0.5);
+    --secondary-color: rgba(55, 59, 105, 0.5); 
+    --tertiairy-color: rgba(115, 121, 197, 0.5);
+}
+
+:root.active #switch {
+    --dark-color: rgba(17, 18, 36, 0.5);
+    --primary-color: rgba(34, 37, 75, 0.5);
+    --secondary-color: rgba(55, 59, 105, 0.5); 
+    --tertiairy-color: rgba(115, 121, 197, 0.5);
+}
+
+#switch {
+    background-color: var(--primary-color);
+    color: var(--color-white);
+    border: 0;
+    padding: .1rem .5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+#switch:hover {
+    transform: translateY(-.1rem);
+}
+
+#switch:active {
+    transform: translateY(0rem);
+}
+
+*, 
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: inherit;
+    padding: 0 0 10rem 0;
+    position: relative;
+}
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+}
+
+.search {
+    background-color: transparent;
+    font-family: inherit;
+    border: 2px solid var(--primary-color);
+    border-radius: 50rem;
+    font-size: 1rem;    
+    padding: .5rem 1rem;
+    transition: width .5s ease;
+    color: var(--color-white);
+}
+
+.search::placeholder {
+    color: var(--color-white);
+}
+
+.search:focus {
+    outline: none;
+    background-color: var(--primary-color);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5rem auto;
+    max-width: 95%;
+}
+
+.movie {
+    width: 300px;
+    height: 49rem;
+    margin-bottom: 2rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.movie img {
+    width: 100%;
+    height: 90%;
+}
+
+.movie-info {
+    height: 10%;
+    color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem 1rem;
+    letter-spacing: .5px;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    background-color:var(--primary-color);
+    padding: .25rem .5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.movie-info span.green {
+    color: lightgreen;
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+.overview {
+    background-color: var(--color-white);
+    max-width: 100%;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform .3s ease-in;
+}
+
+.overview h3 {
+    margin-bottom: 1rem;
+}
+
+.overview {
+    font-size: 1.4rem;
+}
+
+.movie:hover .overview {
+    transform: translateY(0%);
+} 
+
+.btns {
+    position: absolute;
+    top: 97.8%;
+    left: 50%;
+    transform: translate(-50%, -97.8%);
+    margin-top: 2rem;
+}
+
+.btns button {
+    width: 10rem;
+    background-color: var(--tertiairy-color);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
+    margin: 1rem;
+    padding: .3rem .5rem;
+    text-transform: capitalize;
+    transition: all .1s linear;
+}
+
+.btns button:hover {
+    color: var(--color-white);
+    background-color: var(--secondary-color);    
+    box-shadow: .1rem .1rem .1rem var(--tertiairy-color);
+}
+
+.btns button:active {
+    color: var(--color-white);
+    box-shadow: 0 0 0 var(--tertiairy-color);
+    transform: translate(.1rem, .1rem);
+}
+
+button:disabled {
+    color: var(--tertiairy-color);
+}
+
+/* :root.active {
+    color: transparent;
+} */
+
+button:disabled:hover {
+    color: var(--tertiairy-color);
+    background-color: var(--tertiairy-color);
+    box-shadow: 0 0 0;
+}
